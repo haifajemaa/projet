@@ -1,0 +1,96 @@
+
+<div class="container d-flex justify-content-center">
+
+  <div class="card shadow-lg border-0 rounded-4 p-4"
+       style="max-width: 450px; width: 100%;">
+
+    <div class="card-body">
+
+      <div class="text-center mb-4">
+
+        <i class="bi bi-person-lock text-dark display-1"></i>
+
+        <h2 class="fw-bold mt-3">TIMEPIECES</h2>
+
+        <h5 class="text-secondary">Espace administrateur</h5>
+
+        <p class="text-muted">
+          Connectez-vous pour gérer votre boutique.
+        </p>
+
+      </div>
+
+      <form [formRoot]="adminForm" (submit)="onsubmit()">
+        <div class="mb-3">
+
+          <label for="nom" class="form-label fw-semibold">
+            Votre nom
+          </label>
+
+          <div class="input-group">
+
+            <span class="input-group-text bg-dark text-white">
+              <i class="bi bi-person"></i>
+            </span>
+
+           <input
+                type="text"
+                
+                class="form-control"
+                placeholder="Votre nom"
+                
+                [formField]="adminForm.username"
+                >
+
+          </div>
+        </div>
+
+        <div class="mb-4">
+
+          <label for="password" class="form-label fw-semibold">
+            Mot de passe
+          </label>
+
+          <div class="input-group">
+
+            <span class="input-group-text bg-dark text-white">
+              <i class="bi bi-lock"></i>
+            </span>
+
+            <input
+                type="password"
+                
+                class="form-control"
+                placeholder="Votre mot de passe"
+                
+                [formField]="adminForm.password"
+                >
+
+          </div>
+        </div>
+
+        <button type="submit"
+                class="btn btn-dark w-100 py-2 fw-semibold">
+
+          <i class="bi bi-box-arrow-in-right me-2"></i>
+          Se connecter
+
+        </button>
+
+        <div class="text-center mt-4">
+
+          <a routerLink="/produits"
+             class="text-decoration-none text-secondary">
+
+            <i class="bi bi-arrow-left me-2"></i>
+            Retour à l'accueil
+
+          </a>
+
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

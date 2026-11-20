@@ -1,0 +1,21 @@
+
+<div class="card product-card h-100">
+
+    <div class="overflow-hidden" style="height: 700px;">
+        <img
+            [src]="watch().photo"
+            [alt]="watch().nom"
+            class="w-100 h-100 object-fit-cover"
+        />
+    </div>
+
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title">{{ watch().nom }}</h5>
+        <p>{{ watch().categorie }}</p>
+         <a [routerLink]="['/produit', watch().id]" class="btn btn-dark w-100 mt-auto">
+            Voir le produit
+         </a>
+    </div>
+
+</div>
+

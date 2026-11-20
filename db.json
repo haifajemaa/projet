@@ -1,0 +1,718 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "nom": "CLUSE Gracieuse Mini",
+      "photo": "img1.jpg",
+      "prix": 150,
+      "marque": "Michael Kors",
+      "quantite": 0,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Rond beige"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Vintage"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nom": "CLUSE Minuit",
+      "photo": "img2.jpg",
+      "prix": 490,
+      "marque": "Citizen",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée et marron"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Cuir marron"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Noir"
+        },
+        {
+          "nom": "Forme",
+          "valeur": "Ovale"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "nom": "CLUSE La Tétragone",
+      "photo": "img3.jpg",
+      "prix": 600,
+      "marque": "Michael Kors",
+      "quantite": 1,
+      "categorie": "Homme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Noir"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Classique"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "nom": "ROLEX Oyster Perpetual",
+      "photo": "img4.jpg",
+      "prix": 420,
+      "marque": "Rolex",
+      "quantite": 1,
+      "categorie": "Homme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Argentée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Acier inoxydable"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Bleu"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Luxe"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "nom": "ROLEX OYSTER PERPETUALDATEJUST",
+      "photo": "img5.jpg",
+      "prix": 800,
+      "marque": "Rolex",
+      "quantite": 1,
+      "categorie": "Homme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Argentée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Acier inoxydable"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Bleu"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Luxe"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "nom": "CARTIER Santos",
+      "photo": "img6.jpg",
+      "prix": 500,
+      "marque": "Cartier",
+      "quantite": 1,
+      "categorie": "Homme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Argentée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Noir"
+        },
+        {
+          "nom": "Forme",
+          "valeur": "Carrée"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "nom": "CLUSE Boho Chic",
+      "photo": "img7.jpg",
+      "prix": 90,
+      "marque": "Citizen",
+      "quantite": 1,
+      "categorie": "Homme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Argentée et marron"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Cuir marron"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Marron"
+        },
+        {
+          "nom": "Forme",
+          "valeur": "Rectangulaire"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "nom": "CLUSE Féroce",
+      "photo": "img8.jpg",
+      "prix": 120,
+      "marque": "Michael Kors",
+      "quantite": 1,
+      "categorie": "Homme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée et argentée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Acier bicolore"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Noir"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Élégant"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "nom": "MICHAEL KORS Darci",
+      "photo": "img9.jpg",
+      "prix": 30,
+      "marque": "Michael Kors",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Bordeaux"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Féminin"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "nom": "CLUSE Gracieuse",
+      "photo": "img10.jpg",
+      "prix": 300,
+      "marque": "Cartier",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Argentée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Rose"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Féminin"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "nom": "DANIEL WELLINGTON Classic",
+      "photo": "img11.jpg",
+      "prix": 993,
+      "marque": "Cartier",
+      "quantite": 1,
+      "categorie": "Homme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Argentée et dorée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Acier bicolore"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Blanc"
+        },
+        {
+          "nom": "Forme",
+          "valeur": "Rond"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "nom": "CLUSE Anglée",
+      "photo": "img12.jpg",
+      "prix": 679,
+      "marque": "Casio",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Noir"
+        },
+        {
+          "nom": "Forme",
+          "valeur": "Rectangulaire"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "nom": "CLUSE Minuit Rectangulaire",
+      "photo": "img13.jpg",
+      "prix": 556,
+      "marque": "Casio",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Noir"
+        },
+        {
+          "nom": "Forme",
+          "valeur": "Rectangulaire"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "nom": "FOSSIL Jacqueline",
+      "photo": "img14.jpg",
+      "prix": 914,
+      "marque": "Casio",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée et noire"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Cuir noir"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Blanc"
+        },
+        {
+          "nom": "Forme",
+          "valeur": "Ovale"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "nom": "MICHAEL KORS Lexington",
+      "photo": "img15.jpg",
+      "prix": 683,
+      "marque": "Citizen",
+      "quantite": 1,
+      "categorie": "Homme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Blanc"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Élégant"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "nom": "CLUSE La Vedette",
+      "photo": "img16.jpg",
+      "prix": 500,
+      "marque": "Cartier",
+      "quantite": 1,
+      "categorie": "Homme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée et rouge"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Beige"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Vintage"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "nom": "CLUSE Gracieuse Petite",
+      "photo": "img17.jpg",
+      "prix": 429,
+      "marque": "Citizen",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée et marron"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Cuir marron"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Beige"
+        },
+        {
+          "nom": "Forme",
+          "valeur": "Rond"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "nom": "DANIEL WELLINGTON Quadro",
+      "photo": "img18.jpg",
+      "prix": 798,
+      "marque": "Daniel Wellington",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée et argentée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Acier bicolore"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Noir"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Classique"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "nom": "CLUSE La Tétragone Mini",
+      "photo": "img19.jpg",
+      "prix": 842,
+      "marque": "Cluse",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Blanc"
+        },
+        {
+          "nom": "Forme",
+          "valeur": "Ovale"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "nom": "Casio",
+      "photo": "img20.jpg",
+      "prix": 920,
+      "marque": "Casio",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Blanc"
+        },
+        {
+          "nom": "Forme",
+          "valeur": "Rectangulaire"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "nom": "CLUSE Gracieuse Mesh",
+      "photo": "img21.jpg",
+      "prix": 193,
+      "marque": "Daniel Wellington",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Blanc"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Minimaliste"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "nom": "FOSSIL Neutra Chronograph",
+      "photo": "img22.jpg",
+      "prix": 628,
+      "marque": "Michael Kors",
+      "quantite": 1,
+      "categorie": "Homme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée et noire"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Cuir noir"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Noir"
+        },
+        {
+          "nom": "Fonction",
+          "valeur": "Chronographe apparent"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "nom": "SEIKO Presage",
+      "photo": "img23.jpg",
+      "prix": 578,
+      "marque": "Rolex",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Argentée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Métallique"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Blanc"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Classique"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "nom": "CLUSE Aravis",
+      "photo": "img24.jpg",
+      "prix": 110,
+      "marque": "Seiko",
+      "quantite": 1,
+      "categorie": "Femme",
+      "disponible": true,
+      "dateAjout": "2026-11-06",
+      "caracteristiques": [
+        {
+          "nom": "Couleur",
+          "valeur": "Dorée et argentée"
+        },
+        {
+          "nom": "Bracelet",
+          "valeur": "Acier bicolore"
+        },
+        {
+          "nom": "Cadran",
+          "valeur": "Bleu"
+        },
+        {
+          "nom": "Style",
+          "valeur": "Élégant"
+        }
+      ]
+    },
+    {
+      "id": "ButpBPGrT4g",
+      "nom": "Gold Elegance Cuff Watch",
+      "photo": "img27.jpg",
+      "prix": 700,
+      "marque": "Veloraa",
+      "quantite": 3,
+      "categorie": "femme",
+      "disponible": false,
+      "dateAjout": "2026-11-20T00:00:00.000Z",
+      "caracteristiques": [
+        {
+          "nom": "couleur",
+          "valeur": "argentée"
+        }
+      ]
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

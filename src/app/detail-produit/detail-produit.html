@@ -1,0 +1,74 @@
+<div class="container mt-5">
+
+    @if (watch(); as w) {
+
+        <div class="card shadow p-4">
+
+            <div class="row">
+
+                <div class="col-md-5 text-center">
+                    <img
+                        [src]="w.photo"
+                        [alt]="w.nom"
+                        class="img-fluid object-fit-contain"
+                        style="height: 550px;"
+                    />
+                </div>
+
+             
+                <div class="col-md-7">
+
+                    <h2 class="fw-bold">{{ w.nom }}</h2>
+
+                    <hr>
+
+                    
+
+                    <p><strong>Marque :</strong> {{ w.marque }}</p>
+
+                    <p><strong>Catégorie :</strong> {{ w.categorie }}</p>
+
+                    <p><strong>Prix :</strong> {{ w.prix | pipeprix }}</p>
+
+                    <p><strong>Quantité :</strong> {{ w.quantite }}</p>
+
+                    <p>
+    <strong>Disponibilité :</strong>
+
+    @if (w.quantite > 0) {
+        <span [class]="'badge bg-success'">Disponible</span>
+    } @else {
+        <span [class]="'badge bg-danger'">Indisponible</span>
+    }
+</p>
+
+                    <p>
+                        <strong>Date d'ajout :</strong>
+                        {{ w.dateAjout | date:'dd/MM/yyyy' }}
+                    </p>
+
+                    <hr>
+
+                    
+                    <h4 class="fw-bold">Caractéristiques</h4>
+
+                    @for (carac of w.caracteristiques; track $index) {
+                        <div class="d-flex justify-content-between border-bottom py-2">
+                            <strong>{{ carac.nom }}</strong>
+                            <span>{{ carac.valeur }}</span>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    } @else {
+
+        <div class="alert alert-warning mt-4">
+            Produit introuvable !
+        </div>
+
+    }
+
+</div>

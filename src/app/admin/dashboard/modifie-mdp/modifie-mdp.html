@@ -1,0 +1,76 @@
+
+<div class="container py-5">
+
+  <h2 class="fw-bold text-center mb-4">Modifier le mot de passe</h2>
+
+  <div class="card shadow-sm border-0 rounded-4 p-4 mx-auto"
+       style="max-width: 700px;">
+
+    <form [formRoot]="passwordForm" (submit)="onSubmit()">
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Ancien mot de passe</label>
+
+        <input type="password" class="form-control"
+               [formField]="passwordForm.ancienPassword"
+               placeholder="Ancien mot de passe">
+
+        @if (passwordForm.ancienPassword().touched()) {
+  @for (error of passwordForm.ancienPassword().errors(); track error) {
+    <div class="text-danger small mt-1 bg-danger text-white p-2 rounded">
+      {{ error.message }}
+    </div>
+  }
+}
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Nouveau mot de passe</label>
+
+        <input type="password" class="form-control"
+               [formField]="passwordForm.nouveauPassword"
+               placeholder="Nouveau mot de passe">
+
+        @if (passwordForm.nouveauPassword().touched()) {
+          @for (error of passwordForm.nouveauPassword().errors(); track error) {
+            <div class="text-danger small mt-1 bg-danger text-white p-2 rounded">
+              {{ error.message }}
+            </div>
+          }
+        }
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label fw-semibold">Confirmer le mot de passe</label>
+
+        <input type="password" class="form-control"
+               [formField]="passwordForm.confirmPassword"
+               placeholder="Confirmer le mot de passe">
+
+        @if (passwordForm.confirmPassword().touched()) {
+          @for (error of passwordForm.confirmPassword().errors(); track error) {
+            <div class="text-danger small mt-1 bg-danger text-white p-2 rounded">
+              {{ error.message }}
+            </div>
+          }
+        }
+      </div>
+
+      <div class="d-flex gap-2">
+
+        <button type="submit" class="btn btn-dark flex-fill">
+          <i class="bi bi-key me-2"></i>
+          Modifier
+        </button>
+
+        <a routerLink="/admin/dashboard"
+           class="btn btn-outline-secondary flex-fill">
+          Annuler
+        </a>
+
+      </div>
+
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,104 @@
+
+<div class="container py-5">
+
+  <h2 class="fw-bold text-center mb-4">
+    <i class="bi bi-search me-2"></i>
+    Rechercher une montre
+  </h2>
+
+  <p class="text-secondary text-center mb-4">
+    Saisissez l'identifiant de la montre à rechercher.
+  </p>
+
+  <div class="card shadow-sm border-0 rounded-4 p-4 mx-auto"
+       style="max-width: 650px;">
+
+    <form [formRoot]="watchForm" (submit)="rechercherWatch()">
+
+      <div class="mb-4">
+
+        <label class="form-label fw-semibold" for="watchId">
+          Identifiant de la montre
+        </label>
+
+        <div class="input-group">
+
+          <input type="text"
+                 id="watchId"
+                 class="form-control"
+                 [formField]="watchForm.id"
+                 placeholder="Identifiant de la montre">
+
+          <button type="submit" class="btn btn-dark">
+            <i class="bi bi-search me-2"></i>
+            Rechercher
+          </button>
+
+        </div>
+
+      </div>
+
+    </form>
+
+    @if (selectedWatch(); as w) {
+
+      <div class="card shadow-sm border-0 rounded-4 p-3 mt-3">
+
+        <div class="text-center mb-3">
+          <img [src]="w.photo"
+               [alt]="w.nom"
+               class="img-fluid object-fit-contain"
+               style="height: 250px;">
+        </div>
+
+        <h4 class="fw-bold text-center">{{ w.nom }}</h4>
+
+        <hr>
+
+        <p><strong>ID :</strong> {{ w.id }}</p>
+        <p><strong>Marque :</strong> {{ w.marque }}</p>
+        <p><strong>Catégorie :</strong> {{ w.categorie }}</p>
+        <p><strong>Prix :</strong> {{ w.prix | pipeprix }}</p>
+        <p><strong>Quantité :</strong> {{ w.quantite }}</p>
+
+        <p>
+          <strong>Disponibilité :</strong>
+          @if (w.disponible) {
+            <span class="badge bg-success">Disponible</span>
+          } @else {
+            <span class="badge bg-danger">Indisponible</span>
+          }
+        </p>
+
+        <p>
+          <strong>Date d'ajout :</strong>
+          {{ w.dateAjout | date:'dd/MM/yyyy' }}
+        </p>
+
+        <hr>
+
+        <h5 class="fw-bold">Caractéristiques</h5>
+
+        @for (carac of w.caracteristiques; track $index) {
+          <div class="d-flex justify-content-between border-bottom py-2">
+            <strong>{{ carac.nom }}</strong>
+            <span>{{ carac.valeur }}</span>
+          </div>
+        }
+
+      </div>
+
+    } @else if (rechercheEffectuee()) {
+
+      <div class="alert alert-warning text-center mt-3">
+        Aucune montre trouvée. Vérifiez l'identifiant.
+      </div>
+
+    }
+    <a routerLink="/admin/dashboard"
+           class="btn btn-outline-secondary flex-fill">
+          Annuler
+        </a>
+
+  </div>
+</div>
