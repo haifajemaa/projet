@@ -1,3 +1,4 @@
+
 import { Component, inject, OnInit, computed } from '@angular/core';
 import { ProductService } from '../services/product-service';
 import { Produit } from '../produit/produit';
@@ -14,18 +15,19 @@ export class ListeProduits implements OnInit {
 
   watches = this.watchesservice.watches;
 
-  produitsFiltres = computed(() => {
-    return this.watches().filter(w => {
+  watchesFiltres = computed(() => {
+    return this.watchesservice.watches().filter(watch => {
 
-      const nomValide = w.nom.toLowerCase()
-        .startsWith(this.watchesservice.searchNom().trim().toLowerCase());
+      const nom = watch.nom.toLowerCase().includes(
+        this.watchesservice.searchNom().toLowerCase()
+      );
 
-      const categorieValide =
+      const categorie =
         this.watchesservice.searchCategorie() === '' ||
-        w.categorie.toLowerCase() ===
+        watch.categorie.toLowerCase() ===
         this.watchesservice.searchCategorie().toLowerCase();
 
-      return nomValide && categorieValide;
+      return nom && categorie;
     });
   });
 

@@ -14,6 +14,7 @@
       aria-controls="navbarContent"
       aria-expanded="false"
       aria-label="Ouvrir le menu">
+
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -22,18 +23,19 @@
       <div class="input-group mx-lg-5 my-3 my-lg-0 w-100">
 
         <input
+          #nom
           type="text"
           class="form-control"
           placeholder="Rechercher par nom..."
           [value]="searchNom()"
-          (input)="searchNom.set($any($event.target).value)"
-          (keyup.enter)="rechercher()">
+          (input)="searchNom.set(nom.value); rechercher()">
 
         <select
+          #categorie
           class="form-select"
           style="max-width: 140px;"
           [value]="searchCategorie()"
-          (change)="searchCategorie.set($any($event.target).value)">
+          (change)="searchCategorie.set(categorie.value); rechercher()">
 
           <option value="">Tous les genres</option>
           <option value="homme">Homme</option>
@@ -41,28 +43,20 @@
 
         </select>
 
-        <button
-          class="btn btn-primary"
-          type="button"
-          (click)="rechercher()">
-          <i class="bi bi-search"></i>
-        </button>
-
       </div>
 
       <div class="navbar-nav ms-auto gap-lg-3">
 
-        <a class="nav-link fw-semibold" routerLink="/produits">
+        <a
+          class="nav-link fw-semibold"
+          routerLink="/produits"
+          (click)="reinitialiser(nom, categorie)">
           Nos montres
         </a>
 
         <a class="nav-link fw-semibold" routerLink="/about">
           À propos
         </a>
-
-      </div>
-
-      <div class="navbar-nav ms-auto gap-lg-3">
 
         <a class="nav-link fw-semibold" routerLink="/admin/login">
           <i class="bi bi-person-lock me-2 text-white"></i>
@@ -75,7 +69,6 @@
 
   </div>
 </nav>
-
 
 <div class="position-relative w-100 overflow-hidden" style="height: 650px;">
 
@@ -114,9 +107,12 @@
 
     <a
       routerLink="/produits"
-      class="btn btn-primary btn-lg rounded-pill px-4 py-3 fw-semibold">
+      class="btn btn-primary btn-lg rounded-pill px-4 py-3 fw-semibold"
+      (click)="reinitialiser(nom, categorie)">
+
       Découvrir nos montres
       <i class="bi bi-arrow-right ms-2"></i>
+
     </a>
 
   </div>

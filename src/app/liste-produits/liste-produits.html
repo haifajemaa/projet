@@ -1,11 +1,13 @@
 <ul class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5 list-unstyled">
 
-   @for (w of produitsFiltres(); track w.id) {
-  <app-produit [watch]="w"></app-produit>
-} @empty {
-  <p class="text-center text-danger fw-semibold">
-    Aucune montre trouvée.
-  </p>
-}
+    @for (watch of watchesFiltres(); track watch.id) {
+        <li class="col">
+            <app-produit [watch]="watch"></app-produit>
+        </li>
+    } @empty {
+        <li class="col">
+            <p class="text-center">Aucun produit trouvé.</p>
+        </li>
+    }
 
 </ul>

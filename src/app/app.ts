@@ -22,4 +22,14 @@ export class App {
 
     this.router.navigate(['/produits']);
   }
+  reinitialiser(nom: HTMLInputElement, categorie: HTMLSelectElement) {
+
+  nom.value = '';
+  categorie.value = '';
+
+  this.searchNom.set('');
+  this.searchCategorie.set('');
+  
+
+}
 }
