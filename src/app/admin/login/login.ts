@@ -1,8 +1,7 @@
 import { Component, signal, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AdminService } from '../../services/admin-service';
-import { form, FormRoot, FormField } from '@angular/forms/signals';
-import { Admin } from '../../services/admin';
+import { form, FormRoot, FormField, required } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-login',
@@ -11,36 +10,35 @@ import { Admin } from '../../services/admin';
   styleUrl: './login.css'
 })
 export class Login {
+  private readonly service = inject(AdminService);
+  private readonly router = inject(Router);
 
-  private service = inject(AdminService);
-  private router = inject(Router);
+  adminModel = signal({ username: '', password: '' });
+  message = signal('');
 
-  adminModel = signal<Admin>({
-    id: 0,
-    username: '',
-    password: ''
+  readonly adminForm = form(this.adminModel, path => {
+    required(path.username, { message: 'Le nom utilisateur est obligatoire' });
+    required(path.password, { message: 'Le mot de passe est obligatoire' });
   });
 
-  readonly adminForm = form(this.adminModel);
-
-  onsubmit() {
-
+  onsubmit(): void {
     const username = this.adminModel().username;
     const password = this.adminModel().password;
 
+    this.message.set('');
+
     this.service.verifierAdmin(username, password).subscribe({
-
       next: (admins) => {
-
         if (admins.length > 0) {
           this.router.navigate(['/admin/dashboard']);
         }
         else {
           alert('Nom utilisateur ou mot de passe incorrect');
         }
-
+      },
+      error: () => {
+        this.message.set('Erreur de connexion au serveur');
       }
-
     });
   }
 }

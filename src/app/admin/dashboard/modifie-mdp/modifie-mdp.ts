@@ -25,7 +25,6 @@ export class ModifieMDP {
   });
 
   readonly passwordForm = form(this.passwordModel, (path) => {
-
     required(path.ancienPassword, {
       message: 'L’ancien mot de passe est obligatoire'
     });
@@ -37,40 +36,34 @@ export class ModifieMDP {
     required(path.confirmPassword, {
       message: 'La confirmation du mot de passe est obligatoire'
     });
-
   });
 
-  onSubmit() {
-
-    if (!this.passwordForm().valid()) {
-      return;
-    }
-
+  onSubmit(): void {
     const ancien = this.passwordModel().ancienPassword;
     const nouveau = this.passwordModel().nouveauPassword;
     const confirmation = this.passwordModel().confirmPassword;
+    this.service.verifierAdmin('admin', ancien).subscribe({
+      next: (admins) => {
+        if (admins.length === 0) {
+          alert('Ancien mot de passe incorrect');
+          return;
+        }
 
-    if (nouveau !== confirmation) {
-      alert('Les mots de passe ne correspondent pas');
-      return;
-    }
+        const admin = admins[0];
 
-    this.service.verifierAdmin('admin', ancien).subscribe(admins => {
-
-      if (admins.length === 0) {
-        alert('Ancien mot de passe incorrect');
-        return;
-      }
-
-      this.service.updateAdmin(nouveau).subscribe(() => {
-        alert('Mot de passe modifié avec succès');
+        this.service.updateAdmin(admin, nouveau).subscribe();
         this.resetForm();
-      });
-
+         
+      
+        
+      },
+      error: () => {
+        alert('Erreur lors de la vérification');
+      }
     });
   }
 
-  resetForm() {
+  resetForm(): void {
     this.passwordModel.set({
       ancienPassword: '',
       nouveauPassword: '',

@@ -64,7 +64,7 @@
       "photo": "img3.jpg",
       "prix": 600,
       "marque": "Michael Kors",
-      "quantite": 1,
+      "quantite": 10,
       "categorie": "Homme",
       "disponible": true,
       "dateAjout": "2026-11-06",
@@ -93,7 +93,7 @@
       "photo": "img4.jpg",
       "prix": 420,
       "marque": "Rolex",
-      "quantite": 1,
+      "quantite": 20,
       "categorie": "Homme",
       "disponible": true,
       "dateAjout": "2026-11-06",
@@ -122,7 +122,7 @@
       "photo": "img5.jpg",
       "prix": 800,
       "marque": "Rolex",
-      "quantite": 1,
+      "quantite": 30,
       "categorie": "Homme",
       "disponible": true,
       "dateAjout": "2026-11-06",
@@ -151,7 +151,7 @@
       "photo": "img6.jpg",
       "prix": 500,
       "marque": "Cartier",
-      "quantite": 1,
+      "quantite": 22,
       "categorie": "Homme",
       "disponible": true,
       "dateAjout": "2026-11-06",
@@ -180,7 +180,7 @@
       "photo": "img7.jpg",
       "prix": 90,
       "marque": "Citizen",
-      "quantite": 1,
+      "quantite": 33,
       "categorie": "Homme",
       "disponible": true,
       "dateAjout": "2026-11-06",
@@ -209,7 +209,7 @@
       "photo": "img8.jpg",
       "prix": 120,
       "marque": "Michael Kors",
-      "quantite": 1,
+      "quantite": 23,
       "categorie": "Homme",
       "disponible": true,
       "dateAjout": "2026-11-06",
@@ -238,7 +238,7 @@
       "photo": "img9.jpg",
       "prix": 30,
       "marque": "Michael Kors",
-      "quantite": 1,
+      "quantite": 13,
       "categorie": "Femme",
       "disponible": true,
       "dateAjout": "2026-11-06",
@@ -383,7 +383,7 @@
       "photo": "img14.jpg",
       "prix": 914,
       "marque": "Casio",
-      "quantite": 1,
+      "quantite": 0,
       "categorie": "Femme",
       "disponible": true,
       "dateAjout": "2026-11-06",
@@ -714,5 +714,11 @@
       ]
     }
   ],
-  "$schema": "./node_modules/json-server/schema.json"
+  "admins": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123456"
+    }
+  ]
 }

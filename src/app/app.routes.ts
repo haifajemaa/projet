@@ -10,8 +10,8 @@ import { Supprimer } from './admin/dashboard/supprimer/supprimer';
 import { Rechercher } from './admin/dashboard/rechercher/rechercher';
 import { ModifieMDP } from './admin/dashboard/modifie-mdp/modifie-mdp';
 
-export const routes: Routes = [
 
+export const routes: Routes = [
   {
     path: 'admin/dashboard',
     children: [
@@ -23,11 +23,10 @@ export const routes: Routes = [
       { path: 'modifier-mdp', component: ModifieMDP }
     ]
   },
-
   { path: 'admin/login', component: Login },
   { path: 'produits', component: ListeProduits },
   { path: 'produit/:idP', component: DetailProduit },
   { path: 'about', component: About },
-  { path: '', redirectTo: 'produits', pathMatch: 'full' }
-
+  { path: '', pathMatch: 'full', component: ListeProduits },
+  { path: '**', redirectTo: 'produits' }
 ];

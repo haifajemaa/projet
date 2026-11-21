@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ProductService } from '../../../services/product-service';
-import { FormField, form, FormRoot, min } from '@angular/forms/signals';
+import { FormField, form, FormRoot, min, required } from '@angular/forms/signals';
 import { Watch } from '../../../services/watch';
 
 @Component({
@@ -11,10 +11,7 @@ import { Watch } from '../../../services/watch';
   templateUrl: './ajouter.html',
 })
 export class Ajouter {
-
   readonly productService = inject(ProductService);
-
-  watches = this.productService.watches;
 
   readonly watchModel = signal<Watch>({
     id: '',
@@ -26,71 +23,40 @@ export class Ajouter {
     categorie: '',
     disponible: false,
     dateAjout: new Date(),
-    caracteristiques: [
-      {
-        nom: '',
-        valeur: ''
-      }
-    ]
+    caracteristiques: [{ nom: '', valeur: '' }]
   });
 
- readonly watchForm = form(this.watchModel, (path) => {
-  min(path.quantite, 1, {
-    message: 'La quantité doit être supérieure à 0'
+  readonly watchForm = form(this.watchModel, path => {
+    required(path.nom, { message: 'Le nom est obligatoire' });
+    required(path.photo, { message: 'La photo est obligatoire' });
+    required(path.marque, { message: 'La marque est obligatoire' });
+    required(path.categorie, { message: 'La catégorie est obligatoire' });
+    min(path.prix, 50.00, { message: 'Le prix doit être supérieur à 50 DT' });
+    min(path.quantite, 0, { message: 'La quantité ne peut pas être négative' });
   });
 
-  min(path.prix, 50.01, {
-    message: 'Le prix doit être supérieur à 50 DT'
-  });
-});
-  ajouterCaracteristique() {
-    this.watchModel.update(w => ({
-      ...w,
-      caracteristiques: [
-        ...w.caracteristiques,
-        {
-          nom: '',
-          valeur: ''
-        }
-      ]
+  ajouterCaracteristique(): void {
+    this.watchModel.update(watch => ({
+      ...watch,
+      caracteristiques: [...watch.caracteristiques, { nom: '', valeur: '' }]
     }));
   }
 
-  onSubmit() {
-    if (!this.watchForm().valid()) {
-      return;
-    }
+  onSubmit(): void {
+    if (!this.watchForm().valid()) return;
 
-    let w = this.watchForm().value();
+    const { id, ...newWatch } = this.watchForm().value();
+    newWatch.disponible = newWatch.quantite > 0;
 
-    this.productService.addWatch(w).subscribe({
-      next: () => {
-        console.log('Montre ajoutée avec succès');
-        this.resetForm();
-      },
-      error: (err) => {
-        console.log('Erreur lors de l’ajout', err);
-      }
-    });
+    this.productService.addWatch(newWatch).subscribe();
+    this.resetForm();
   }
 
-  resetForm() {
+  resetForm(){
     this.watchModel.set({
-      id: '',
-      nom: '',
-      photo: '',
-      prix: 0,
-      marque: '',
-      quantite: 0,
-      categorie: '',
-      disponible: false,
-      dateAjout: new Date(),
-      caracteristiques: [
-        {
-          nom: '',
-          valeur: ''
-        }
-      ]
+      id: '', nom: '', photo: '', prix: 0, marque: '', quantite: 0,
+      categorie: '', disponible: false, dateAjout: new Date(),
+      caracteristiques: [{ nom: '', valeur: '' }]
     });
   }
 }

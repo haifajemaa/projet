@@ -13,6 +13,11 @@
         <input type="text" class="form-control"
                [formField]="watchForm.nom"
                placeholder="Nom de la montre">
+        @if (watchForm.nom().touched()) {
+          @for (error of watchForm.nom().errors(); track error) {
+            <div class="text-danger small mt-1">{{ error.message }}</div>
+          }
+        }
       </div>
 
       <div class="mb-3">
@@ -20,6 +25,11 @@
         <input type="text" class="form-control"
                [formField]="watchForm.photo"
                placeholder="Chemin de la photo">
+        @if (watchForm.photo().touched()) {
+          @for (error of watchForm.photo().errors(); track error) {
+            <div class="text-danger small mt-1">{{ error.message }}</div>
+          }
+        }
       </div>
 
       <div class="mb-3">
@@ -41,6 +51,11 @@
         <input type="text" class="form-control"
                [formField]="watchForm.marque"
                placeholder="Marque">
+        @if (watchForm.marque().touched()) {
+          @for (error of watchForm.marque().errors(); track error) {
+            <div class="text-danger small mt-1">{{ error.message }}</div>
+          }
+        }
       </div>
 
       <div class="mb-3">
@@ -67,6 +82,11 @@
           <option value="homme">Homme</option>
           <option value="femme">Femme</option>
         </select>
+        @if (watchForm.categorie().touched()) {
+          @for (error of watchForm.categorie().errors(); track error) {
+            <div class="text-danger small mt-1">{{ error.message }}</div>
+          }
+        }
       </div>
 
       <div class="mb-3">

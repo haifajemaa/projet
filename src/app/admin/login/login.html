@@ -39,10 +39,13 @@
                 class="form-control"
                 placeholder="Votre nom"
                 
-                [formField]="adminForm.username"
-                >
-
+                [formField]="adminForm.username">
           </div>
+          @if (adminForm.username().touched()) {
+            @for (error of adminForm.username().errors(); track error) {
+              <div class="text-danger small mt-1">{{ error.message }}</div>
+            }
+          }
         </div>
 
         <div class="mb-4">
@@ -63,10 +66,13 @@
                 class="form-control"
                 placeholder="Votre mot de passe"
                 
-                [formField]="adminForm.password"
-                >
-
+                [formField]="adminForm.password">
           </div>
+          @if (adminForm.password().touched()) {
+            @for (error of adminForm.password().errors(); track error) {
+              <div class="text-danger small mt-1">{{ error.message }}</div>
+            }
+          }
         </div>
 
         <button type="submit"
@@ -76,6 +82,11 @@
           Se connecter
 
         </button>
+        @if (message()) {
+  <div class="alert alert-danger text-center py-2">
+    {{ message() }}
+  </div>
+}
 
         <div class="text-center mt-4">
 
