@@ -712,13 +712,35 @@
           "valeur": "argentée"
         }
       ]
+    },
+    {
+      "nom": "Casio A168WA",
+      "photo": "img28.jpg",
+      "prix": 200,
+      "marque": "Casio ",
+      "quantite": 2,
+      "categorie": "homme",
+      "disponible": true,
+      "dateAjout": "2026-11-21T00:00:00.000Z",
+      "caracteristiques": [
+        {
+          "nom": "Matière",
+          "valeur": "Stainless Steel"
+        },
+        {
+          "nom": "Couleur",
+          "valeur": "Argent"
+        }
+      ],
+      "id": "ST3WxhktpNY"
     }
   ],
   "admins": [
     {
       "id": "1",
       "username": "admin",
-      "password": "123456"
+      "password": "1234"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
