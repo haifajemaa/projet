@@ -697,7 +697,7 @@
       ]
     },
     {
-      "id": "ButpBPGrT4g",
+      "id": "25",
       "nom": "Gold Elegance Cuff Watch",
       "photo": "img27.jpg",
       "prix": 700,
@@ -714,6 +714,7 @@
       ]
     },
     {
+      "id": "26",
       "nom": "Casio A168WA",
       "photo": "img28.jpg",
       "prix": 200,
@@ -731,15 +732,31 @@
           "nom": "Couleur",
           "valeur": "Argent"
         }
-      ],
-      "id": "ST3WxhktpNY"
+      ]
+    },
+    {
+      "id": "Y_nYhNeGnFE",
+      "nom": "Esther",
+      "photo": "img29.jpg",
+      "prix": 220,
+      "marque": "BREDA",
+      "quantite": 7,
+      "categorie": "Homme",
+      "disponible": true,
+      "dateAjout": "2026-11-22T00:00:00.000Z",
+      "caracteristiques": [
+        {
+          "nom": "couleur",
+          "valeur": "Gold"
+        }
+      ]
     }
   ],
   "admins": [
     {
       "id": "1",
       "username": "admin",
-      "password": "1234"
+      "password": "987654321"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -32,9 +32,7 @@ export class Login {
         if (admins.length > 0) {
           this.router.navigate(['/admin/dashboard']);
         }
-        else {
-          alert('Nom utilisateur ou mot de passe incorrect');
-        }
+       
       },
       error: () => {
         this.message.set('Erreur de connexion au serveur');

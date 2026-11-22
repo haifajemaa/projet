@@ -24,15 +24,21 @@ export class ProductService {
     return this.http.get<Watch>(`${URL}/${id}`);
   }
 
-  addWatch(watch: Omit<Watch, 'id'>): Observable<Watch> {
-    return this.http.post<Watch>(URL, watch).pipe(
-      tap(newWatch => this._watches.update(watches => [...watches, newWatch]))
-    );
-  }
+ addWatch(watch: Watch): Observable<Watch> {
+  return this.http.post<Watch>(URL, watch).pipe(
+    tap(newWatch => this._watches.update(
+      watches => [...watches, newWatch]
+    ))
+  );
+}
 
-  updateWatch(id: string, watch: Watch): Observable<Watch> {
-    return this.http.put<Watch>(`${URL}/${id}`, watch).pipe();
-  }
+ updateWatch(id: string, watch: Watch): Observable<Watch> {
+  return this.http.put<Watch>(`${URL}/${id}`, watch).pipe(
+    tap(updatedWatch => this._watches.update(watches =>
+      watches.map(w => w.id === updatedWatch.id ? updatedWatch : w)
+    ))
+  );
+}
 
   deleteWatch(id: string): Observable<void> {
     return this.http.delete<void>(`${URL}/${id}`).pipe(

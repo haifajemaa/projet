@@ -1,21 +1,21 @@
 
 <div class="container py-5">
 
-  <h2 class="text-center fw-bold mb-4">Modifier une montre</h2>
+  <h2 class="text-center fw-bold mb-4">
+    Modifier une montre
+  </h2>
 
   <div class="card shadow-sm p-4 mx-auto" style="max-width: 700px;">
     <div class="mb-4">
-      <label class="form-label fw-semibold">
-        Rechercher une montre
-      </label>
+      <label class="form-label">Identifiant de la montre</label>
 
       <div class="input-group">
         <input type="text" class="form-control"
-               [(ngModel)]="idRecherche"
-               placeholder="Entrer l'identifiant de la montre">
+          [(ngModel)]="idRecherche"
+          placeholder="Entrer l'identifiant">
 
-        <button type="button" class="btn btn-dark"
-                (click)="rechercherWatch()">
+        <button class="btn btn-dark"
+          (click)="rechercherWatch()">
           Rechercher
         </button>
       </div>
@@ -26,17 +26,10 @@
       <div class="alert alert-success">
         Montre trouvée : {{ selectedWatch.nom }}
       </div>
-
-      
       <div class="mb-3">
-        <label class="form-label fw-semibold">
-          Choisir le champ à modifier
-        </label>
+        <label class="form-label">Champ à modifier</label>
 
-        <select class="form-select"
-                [(ngModel)]="champSelectionne"
-                (change)="nouvelleValeur = ''">
-
+        <select class="form-select" [(ngModel)]="champSelectionne">
           <option value="">Choisir un champ</option>
           <option value="nom">Nom</option>
           <option value="photo">Photo</option>
@@ -44,57 +37,29 @@
           <option value="marque">Marque</option>
           <option value="quantite">Quantité</option>
           <option value="categorie">Catégorie</option>
-          <option value="dateAjout">Date d'ajout</option>
-          
         </select>
       </div>
 
       @if (champSelectionne) {
-
         <div class="mb-3">
+          <label class="form-label">Nouvelle valeur</label>
 
-          <label class="form-label fw-semibold">
-            Nouvelle valeur
-          </label>
-
-          @if (champSelectionne === 'categorie') {
-
-            <select class="form-select"
-                    [(ngModel)]="nouvelleValeur">
-              <option value="">Choisir une catégorie</option>
-              <option value="homme">Homme</option>
-              <option value="femme">Femme</option>
-            </select>
-
-          
-          } @else {
-
-            <input class="form-control"
-                   [type]="champSelectionne === 'prix' || champSelectionne === 'quantite'
-                     ? 'number'
-                     : champSelectionne === 'dateAjout'
-                     ? 'date'
-                     : 'text'"
-                   [(ngModel)]="nouvelleValeur"
-                   placeholder="Entrer la nouvelle valeur">
-
-          }
-
+          <input class="form-control"
+            [type]="champSelectionne === 'prix' || champSelectionne === 'quantite' ? 'number' : 'text'"
+            [(ngModel)]="nouvelleValeur">
         </div>
 
-        <button type="button" class="btn btn-dark w-100"
-                (click)="modifierWatch()">
-          <i class="bi bi-pencil-square me-2"></i>
+        <button class="btn btn-dark w-100"
+          (click)="modifierWatch()">
           Enregistrer la modification
         </button>
-
       }
-
     }
+
     <a routerLink="/admin/dashboard"
-           class="btn btn-outline-secondary flex-fill">
-          Annuler
-        </a>
+      class="btn btn-outline-secondary mt-3">
+      Annuler
+    </a>
 
   </div>
 </div>

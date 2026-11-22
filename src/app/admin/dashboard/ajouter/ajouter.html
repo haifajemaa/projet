@@ -7,6 +7,17 @@
        style="max-width: 700px;">
 
     <form [formRoot]="watchForm" (submit)="onSubmit()">
+     <div class="mb-3">
+        <label class="form-label fw-semibold">Identifiant  de la montre</label>
+        <input type="text" class="form-control"
+               [formField]="watchForm.id"
+               placeholder="id de la montre">
+        @if (watchForm.id().invalid()) {
+          @for (error of watchForm.id().errors(); track error) {
+            <div class="text-danger small mt-1">{{ error.message }}</div>
+          }
+        }
+      </div>
 
       <div class="mb-3">
         <label class="form-label fw-semibold">Nom de la montre</label>

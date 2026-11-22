@@ -41,24 +41,12 @@ export class ModifieMDP {
   onSubmit(): void {
     const ancien = this.passwordModel().ancienPassword;
     const nouveau = this.passwordModel().nouveauPassword;
-    const confirmation = this.passwordModel().confirmPassword;
     this.service.verifierAdmin('admin', ancien).subscribe({
       next: (admins) => {
-        if (admins.length === 0) {
-          alert('Ancien mot de passe incorrect');
-          return;
-        }
-
         const admin = admins[0];
-
         this.service.updateAdmin(admin, nouveau).subscribe();
         this.resetForm();
-         
-      
         
-      },
-      error: () => {
-        alert('Erreur lors de la vérification');
       }
     });
   }

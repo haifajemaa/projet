@@ -23,26 +23,25 @@
       <div class="input-group mx-lg-5 my-3 my-lg-0 w-100">
 
         <input
-          #nom
-          type="text"
-          class="form-control"
-          placeholder="Rechercher par nom..."
-          [value]="searchNom()"
-          (input)="searchNom.set(nom.value); rechercher()">
+            type="text"
+            class="form-control"
+            placeholder="Rechercher par nom..."
+            [(ngModel)]="searchNom"
+            (input)="rechercher()">
 
         <select
-          #categorie
           class="form-select"
-          style="max-width: 140px;"
-          [value]="searchCategorie()"
-          (change)="searchCategorie.set(categorie.value); rechercher()">
+          [(ngModel)]="searchCategorie"
+          (change)="rechercher()">
 
-          <option value="">Tous les genres</option>
-          <option value="homme">Homme</option>
-          <option value="femme">Femme</option>
-
+          <option value="">Toutes les catégories</option>
+          <option value="Femme">Femme</option>
+          <option value="Homme">Homme</option>
+          
         </select>
-
+        <button type="button" class="btn btn-secondary" (click)="annuler()">
+          Annuler
+        </button>
       </div>
 
       <div class="navbar-nav ms-auto gap-lg-3">
@@ -50,7 +49,7 @@
         <a
           class="nav-link fw-semibold"
           routerLink="/produits"
-          (click)="reinitialiser(nom, categorie)">
+          >
           Nos montres
         </a>
 
@@ -108,7 +107,7 @@
     <a
       routerLink="/produits"
       class="btn btn-primary btn-lg rounded-pill px-4 py-3 fw-semibold"
-      (click)="reinitialiser(nom, categorie)">
+      >
 
       Découvrir nos montres
       <i class="bi bi-arrow-right ms-2"></i>

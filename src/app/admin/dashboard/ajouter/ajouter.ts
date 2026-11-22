@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ProductService } from '../../../services/product-service';
-import { FormField, form, FormRoot, min, required } from '@angular/forms/signals';
+import { FormField, form, FormRoot, min, required,pattern } from '@angular/forms/signals';
 import { Watch } from '../../../services/watch';
 
 @Component({
@@ -27,12 +27,14 @@ export class Ajouter {
   });
 
   readonly watchForm = form(this.watchModel, path => {
+    required(path.id, { message: "L'identifiant est obligatoire" });
+  pattern(path.id, /^[0-9]+$/, { message: "L'identifiant doit contenir uniquement des chiffres" });
     required(path.nom, { message: 'Le nom est obligatoire' });
     required(path.photo, { message: 'La photo est obligatoire' });
     required(path.marque, { message: 'La marque est obligatoire' });
     required(path.categorie, { message: 'La catégorie est obligatoire' });
     min(path.prix, 50.00, { message: 'Le prix doit être supérieur à 50 DT' });
-    min(path.quantite, 0, { message: 'La quantité ne peut pas être négative' });
+    min(path.quantite, 1, { message: 'La quantité ne peut pas être null' });
   });
 
   ajouterCaracteristique(): void {
@@ -43,14 +45,17 @@ export class Ajouter {
   }
 
   onSubmit(): void {
-    if (!this.watchForm().valid()) return;
+  if (this.watchForm().valid()) {
 
-    const { id, ...newWatch } = this.watchForm().value();
+    const newWatch = this.watchForm().value();
+
     newWatch.disponible = newWatch.quantite > 0;
 
     this.productService.addWatch(newWatch).subscribe();
+
     this.resetForm();
   }
+}
 
   resetForm(){
     this.watchModel.set({

@@ -19,7 +19,9 @@ export class AdminService {
   }
 
  updateAdmin(admin: Admin, nouveau: string): Observable<Admin> {
-  return this.http.patch<Admin>(`${URL}/${admin.id}`, {
+  return this.http.put<Admin>(`${URL}/${admin.id}`, {
+    id: admin.id,
+    username: admin.username,
     password: nouveau
   });
 }

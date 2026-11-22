@@ -33,14 +33,14 @@
                     <p><strong>Quantité :</strong> {{ w.quantite }}</p>
 
                     <p>
-    <strong>Disponibilité :</strong>
+                        <strong>Disponibilité :</strong>
 
-    @if (w.quantite > 0) {
-        <span [class]="'badge bg-success'">Disponible</span>
-    } @else {
-        <span [class]="'badge bg-danger'">Indisponible</span>
-    }
-</p>
+                        @if (w.quantite > 0) {
+                            <span [class]="'badge bg-success'">Disponible</span>
+                        } @else {
+                            <span [class]="'badge bg-danger'">Indisponible</span>
+                        }
+                    </p>
 
                     <p>
                         <strong>Date d'ajout :</strong>

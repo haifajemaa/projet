@@ -36,9 +36,6 @@ export class Rechercher {
         w => {
           this.selectedWatch.set(w);
           this.rechercheEffectuee.set(true);
-        },
-        () => {
-          this.rechercheEffectuee.set(true);
         }
       );
     }
