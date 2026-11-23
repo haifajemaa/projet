@@ -15,11 +15,9 @@ import { RouterLink } from '@angular/router';
 export class Rechercher {
 
   readonly productService = inject(ProductService);
-
   readonly watchModel = signal({
     id: ''
   });
-
   readonly watchForm = form(this.watchModel);
 
   selectedWatch = signal<Watch | undefined>(undefined);
@@ -27,10 +25,8 @@ export class Rechercher {
 
   rechercherWatch() {
     const id = this.watchForm().value().id;
-
     this.selectedWatch.set(undefined);
     this.rechercheEffectuee.set(false);
-
     if (id) {
       this.productService.getWatchById(id).subscribe(
         w => {

@@ -18,42 +18,22 @@ export class Supprimer {
   readonly watchModel = signal({
     id: ''
   });
-
   readonly watchForm = form(this.watchModel);
-
   selectedWatch: Watch | null = null;
-
   confirmationSuppression = false;
-
   rechercherWatch() {
-
     const id = this.watchForm().value().id;
-
     this.productService.getWatchById(id).subscribe(w => {
       this.selectedWatch = w;
     });
-
   }
-
   supprimerWatch() {
-
     if (this.selectedWatch) {
-
-      this.productService.deleteWatch(this.selectedWatch.id)
-        .subscribe();
-
-          
-
-          this.resetForm();
-
-      
-
+      this.productService.deleteWatch(this.selectedWatch.id).subscribe();
+       this.resetForm();
     }
-
   }
-
   resetForm() {
-
     this.watchModel.set({
       id: ''
     });

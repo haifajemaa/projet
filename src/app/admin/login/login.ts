@@ -32,10 +32,10 @@ export class Login {
         if (admins.length > 0) {
           this.router.navigate(['/admin/dashboard']);
         }
+        else{
+            this.message.set('Erreur de connexion ');
+        }
        
-      },
-      error: () => {
-        this.message.set('Erreur de connexion au serveur');
       }
     });
   }

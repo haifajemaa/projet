@@ -756,7 +756,7 @@
     {
       "id": "1",
       "username": "admin",
-      "password": "987654321"
+      "password": "12345"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

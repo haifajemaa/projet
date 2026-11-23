@@ -42,31 +42,33 @@
 
     @if (selectedWatch) {
 
-  <div class="alert alert-secondary">
-    <h5 class="fw-bold">{{ selectedWatch.nom }}</h5>
-  </div>
+        <div class="alert alert-secondary">
+          <h5 class="fw-bold">{{ selectedWatch.nom }}</h5>
+        </div>
 
-  @if (!confirmationSuppression) {
+        @if (!confirmationSuppression) {
 
-    <div class="d-flex gap-2">
+          <div class="d-flex gap-2">
 
-      <button type="button"
-              class="btn btn-danger flex-fill"
-              (click)="confirmationSuppression = true">
+            <button type="button"
+                    class="btn btn-danger flex-fill"
+                    (click)="confirmationSuppression = true">
 
-        <i class="bi bi-trash me-2"></i>
-        Supprimer
+              <i class="bi bi-trash me-2"></i>
+              Supprimer
 
-      </button>
+            </button>
 
-      <a routerLink="/admin/dashboard"
-         class="btn btn-outline-secondary flex-fill">
-        Annuler
-      </a>
+            <a routerLink="/admin/dashboard"
+              class="btn btn-outline-secondary flex-fill">
+              Annuler
+            </a>
 
-    </div>
+          </div>
 
-  } @else {
+        } 
+        
+      @else {
 
     <div class="alert alert-warning">
       Voulez-vous vraiment supprimer cette montre ?

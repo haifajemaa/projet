@@ -28,7 +28,7 @@ export class Ajouter {
 
   readonly watchForm = form(this.watchModel, path => {
     required(path.id, { message: "L'identifiant est obligatoire" });
-  pattern(path.id, /^[0-9]+$/, { message: "L'identifiant doit contenir uniquement des chiffres" });
+    pattern(path.id, /^[0-9]+$/, { message: "L'identifiant doit contenir uniquement des chiffres" });
     required(path.nom, { message: 'Le nom est obligatoire' });
     required(path.photo, { message: 'La photo est obligatoire' });
     required(path.marque, { message: 'La marque est obligatoire' });
